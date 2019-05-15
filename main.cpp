@@ -1,24 +1,28 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 int main()
-
 {
-   ifstream fin;
-   fin.open ("duom.txt");
-   int m[10], k=0, t=0;
-   while (fin>>m[k])
-    k++;
-   fin.close();
-   for (int a=0; a,k-1; a++)
-    for (int i=t+1; i<k; i++)
-        if (sk[i]<sk[t])
-        t=i;
-    int ks=sk[0];
-    sk[0]=sk[t];
-    sk[t]=ks;
-
-                    }
+    int grybautsk, kart, barav, raudon, lep, bsum=0, rsum=0, lsum=0,grybsum;
+    char vard[15];
+    ifstream fin;
+    fin.open("U2.txt");
+    fin >> grybautsk;
+    for (int i=0; i<grybautsk; i++){
+        fin>> vard >> kart;
+        bsum=0;
+        rsum=0;
+        lsum=0;
+        for (int a=0; a<kart; a++){
+            fin >> barav >> raudon >> lep;
+            bsum=bsum+barav;
+            rsum=rsum+raudon;
+            lsum=lsum+lep;
+            grybsum=bsum+rsum+lsum;
+        }
+        cout <<setw(15)<<left<< vard <<" "<< bsum <<" "<< rsum <<" "<< lsum <<" Suma:"<< grybsum << endl;
+    }
     return 0;
 }
