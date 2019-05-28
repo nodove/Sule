@@ -1,0 +1,24 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream fin;
+    fin.open("U1.txt");
+    int luit[10]={0}, k=0, pir=1, a=0;
+    for(int i=0; i<5; i++)
+        fin>>luit[i];
+    fin.close();
+
+    for (int x=0; x<9; x++)
+    {
+        luit[x]--;
+        luit[pir]++;
+        pir++;
+}
+        for (int a=0; a<10; a++)
+            cout << luit[a] << endl;
+    return 0;
+}
+//*14 1 0 0 0 0
